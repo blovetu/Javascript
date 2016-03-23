@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>window操作</title>
+</head>
+<body>
+	<input type="button" value="添加" class="add">
+	<ul class="fruit">
+		<li>苹果<span class="del">删除</span></li>
+		<li>草莓<span class="del">删除</span></li>
+		<li>香蕉<span class="del">删除</span></li>
+		<li>水蜜桃<span class="del">删除</span></li>
+	</ul>
+	<script type="text/javascript" src="../javascripts/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		// var wind="nihao";
+		// console.log(confirm(wind))
+		
+		$(".del").click(function(){
+			var delet=confirm("确定删除吗?");
+			// console.log(delet);
+			// $(this).parent().remove()
+			if(delet){
+				$(this).parent().remove()
+			}
+		})
+		$(".add").click(function(){
+			var pro=prompt("请输入")
+			if(pro!=""){
+				$(".fruit").append("<li>"+pro+"</li>");
+			}
+			
+		})	
+	</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选项卡</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		#tabs li {
+			list-style: none;
+			width: 100px;
+			height: 50px;
+			border:1px solid red;
+			float: left;
+			text-align: center;
+			line-height: 50px;
+		}
+		#content  {
+			clear: both;
+		}
+		#content li {
+			border:1px solid blue;
+			width: 404px;
+			height: 400px;
+			display: none;
+			border-top:none;
+			background-color: pink;
+		}
+		#content li:nth-child(1){
+			display: block;
+			background-color: pink;
+		}
+	</style>
+</head>
+<body>
+	<ul id="tabs">
+		<li>选项一</li>
+		<li>选项二</li>
+		<li>选项三</li>
+		<li>选项四</li>
+	</ul>
+		<ul id="content">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+	<script type="text/javascript" src="../javascripts/jquery-1.11.1.js"></script>
+	<script>
+		$("#tabs li").mouseenter(function(){
+			$(this).css({"background-color":"pink","border-bottom":"1px solid pink"}).siblings().css({"background-color":"#fff","border-bottom":"1px solid red"});
+			var ind=$(this).index();
+			$("#content li").eq(ind).css("display","block").siblings().css("display","none")
+		})
+	</script>
+</body>
+</html>

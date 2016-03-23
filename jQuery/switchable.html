@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;}
+		.box{width: 370px;
+			height: 224px;
+			overflow: hidden;
+		}
+		.switchable{
+			height: 224px;
+			width: 1480px;
+		}
+		.switchable li {
+			float: left;
+
+		}
+		.list{clear: both;
+		}
+		.list li{width: 30px;
+			height: 30px;
+			border:1px solid red;
+			float:left;
+			list-style: none;
+			text-align: center;
+			line-height: 30px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul class="switchable">
+			<li><img src="../images/1.jpg" alt=""></li>
+			<li><img src="../images/2.jpg" alt=""></li>
+			<li><img src="../images/3.jpg" alt=""></li>
+			<li><img src="../images/4.jpg" alt=""></li>
+		</ul>
+	</div>
+	
+	<ul class="list">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+	</ul>
+
+	<script type="text/javascript" src="../javascripts/jquery-1.11.1.js"></script>
+	<script>
+		$(".list li").click(function(){
+			var index=$(this).index();
+			var val=-370*index;
+			$(".switchable").animate({"margin-left":val},0);
+		})
+	</script>
+</body>
+</html>

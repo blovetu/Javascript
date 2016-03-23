@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM操作</title>
+	<style>
+		/**{margin: 0;padding: 0;}*/
+	</style>
+</head>
+<body>
+	<input type="text" id="text">
+	<input type="button" value="提交" id="btn">
+	<ul>
+		<li>草莓</li>
+		<li>香蕉</li>
+		<li>橙子</li>
+	</ul>
+	<script type="text/javascript" src="../javascripts/jquery-1.11.1.js"></script>
+	<script>
+		$("#btn").click(function(){
+			var val=$("#text").val();
+			var li="<li>"+val+"</li>"
+			$("ul").prepend(li);
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>sentence</title>
+</head>
+<body>
+	<input type="text" id="num1">
+	<input type="text" id="mark">
+	<input type="text" id="num2">
+	<input type="text" id="result">
+	<input type="button" id="submit" value="提交">
+
+	<script type="text/javascript" src="../javascripts/jquery-1.11.1.js"></script>
+	<script>
+		
+		$("#submit").click(function(){
+			var val1=Number($("#num1").val());
+			var val2=Number($("#num2").val());
+			var mark=$("#mark").val();
+			var result=0;
+			if(mark!="+"&mark!="-"&mark!="/"&mark!="*"){
+				$("#mark").val("请输入'+'、'-'、'*'、'/'")
+			}else{
+				function count(val1,val2,mark){
+				switch(mark){
+					case "+" :result = val1 + val2;break;
+					case "-" :result = val1 - val2;break;
+					case "*" :result = val1 * val2;break;
+					case "/" :result = val1 / val2;break;
+				}
+				return result;
+				}
+				count(val1,val2,mark);
+				$("#result").val(result);
+			}
+			
+			
+			// if(mark=="+"){
+			// 	var result=val1+val2;
+			// 	$("#result").val(result);
+			// }
+			// if(mark=="-"){
+			// 	var result=val1-val2;
+			// 	$("#result").val(result)
+			// }
+			// if(mark=="*"){
+			// 	var result=val1*val2;
+			// 	$("#result").val(result)
+			// }
+			// if(mark=="/"){
+			// 	var result=val1/val2;
+			// 	$("#result").val(result)
+			// }
+			// if(mark!="/"&mark!="-"&mark!="*"&mark!="+"){
+			// 	alert("符号不对请重新输入")
+			// }
+		})
+		
+
+	</script>
+</body>
+</html>

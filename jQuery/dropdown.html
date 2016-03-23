@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>下拉菜单</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		.menu>li {
+			list-style: none;
+			float: left;
+			border:1px solid red;
+			/*height: 40px;*/
+			text-align: center;
+			width: 100px;
+			height: 40px;
+			line-height: 40px;}
+		.menu>li a:hover{display: block;
+			background-color: #f00;}
+		.menu_list  {
+			list-style: none;
+			border:1px solid red;
+			display: none;
+			
+		}
+
+	</style>
+</head>
+<body>
+	<ul class="menu">
+		<li>
+			<a href="">jQuery动画</a>
+			<ul class="menu_list">
+				<li><a href="">option1</a></li>
+				<li><a href="">option2</a></li>
+				<li><a href="">option3</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="">方法</a>
+			<ul class="menu_list">
+				<li><a href="">option1</a></li>
+				<li><a href="">option2</a></li>
+				<li><a href="">option3</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="">对象</a>
+			<ul class="menu_list">
+				<li><a href="">option1</a></li>
+				<li><a href="">option2</a></li>
+				<li><a href="">option3</a></li>
+			</ul>
+
+		</li>
+	</ul>
+	<script type="text/javascript" src="../javascripts/jquery-1.11.1.js"></script>
+	<script>
+		$(".menu>li").mouseenter(function(){
+			$(this).find(".menu_list").stop().slideDown(500)
+		})
+		$(".menu>li").mouseleave(function(){
+			$(this).find(".menu_list").stop().slideUp(500)
+		})
+	</script>
+</body>
+</html>

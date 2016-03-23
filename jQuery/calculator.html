@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>计算器</title>
+</head>
+<body>
+	<input type="text" id="number1">+
+	<input type="text" id="number2">=
+	<input type="text" id="answer" value="">
+	<input type="button" id="btn" value="提交">
+	<script type="text/javascript" src="../javascripts/jquery-1.11.1.js"></script>
+	<script>
+		$("#btn").click(function(){
+			var number1=$("#number1").val();
+			var number2=$("#number2").val();
+			alert(number1)
+			var answer=Number(number1)+Number(number2);
+			// $("#answer").attr("value",answer)
+			$("#answer").val(answer);
+			
+		})
+	</script>
+</body>
+</html>

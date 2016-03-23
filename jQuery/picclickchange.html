@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片点击切换</title>
+	<style>
+		* {margin: 0;padding: 0;}
+		.clearfix:after,.clear:after {
+			display: table;
+			content: "";
+		}
+		.clearfix:after{
+			clear:both;
+		}
+		.clearfix{zoom:1;}
+		li {width: 50px;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+			list-style: none;
+			float: left;
+			border: 1px solid red;}
+		div{float: left;
+			margin-right: 50px;}
+		.red {background-color: #f00;}
+	</style>
+</head>
+<body>
+	<div class="a clearfix">
+		<h2>ul做的点击图片切换</h2>
+		<img src="../images/1.jpg" alt="轮播图片">
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</div>
+	<div class="b clearfix">
+		<h2>input做的点击图片切换</h2>
+		<img src="../images/1.jpg" alt="">
+	</div>
+	<script type="text/javascript" src="../javascripts/jquery-1.11.1.js"></script>
+	<script>
+		$("li").click(function(){
+			var ind=$(this).index()+1;
+			var str="../images/"+ind+".jpg";
+			$("img").attr("src",str);
+			$(this).addClass("red").siblings().removeClass("red")
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>正则表达式对象</title>
+</head>
+<body>
+	<input type="text" class="text">
+	<div class="phone">
+		电话：
+		<input type="text" class="pnumber"><span class="ptext"></span>
+	</div>
+	<div>
+		密码：
+		<input type="text" class="passworld"><span class="passWor"></span>
+	</div>
+	<div>
+		邮箱：
+		<input type="text" class="mail"><span class="mailbox"></span>
+	</div>
+	<script type="text/javascript" src="../javascripts/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		// var reg= /1/;
+		// var str= "tfgqg";
+		// var result=reg.test(str);
+		// console.log(result);
+		var reg=/^1$/;
+		$(".text").blur(function(){
+			var text=$(this).val();
+			var result=reg.test(text);
+			console.log(result);
+		})
+		var phoneNumber=/^[0-9]{7,11}$/;
+		$(".pnumber").blur(function(){
+			var pnumber=$(this).val();
+			var result=phoneNumber.test(pnumber);
+			if(!result){
+				$(".ptext").html("输入不正确").css("color","red");
+			}else{
+				$(".ptext").html("");
+			}
+		})
+		var passworld=/^[a-zA-Z]{6,11}$/
+		$(".passworld").blur(function(){
+			var pworld=$(this).val();
+			var result=passworld.test(pworld);
+			if(result){
+				$(".passWor").html("");
+			}else{
+				$(".passWor").html("请输入6-11位字母作为密码").css("color","red")
+			}
+		})
+		var email=/^[0-9a-zA-Z]{2,11}\@(qq|163|126|sina|sohu)\.com$/;
+		$(".mail").blur(function(){
+			var mail=$(this).val();
+			var result=email.test(mail);
+			if(result){
+				$(".mailbox").html("");
+			}else{
+				$(".mailbox").html("邮箱格式不正确").css("color","red");
+			}
+		})
+	</script>
+</body>
+</html>

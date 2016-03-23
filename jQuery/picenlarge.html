@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片放大</title>
+	<style>
+		* {padding: 0;margin: 0;}
+		body {height: 1000px;}
+		.pic li{float: left;
+			list-style: none;
+			margin-right: 10px;
+			position: relative;
+			}
+		.pic li img{width: 200px;height: 100px;}
+		.clear{clear: both;}
+	</style>
+</head>
+<body>
+	<ul class="pic">
+		<li><img src="../images/1.jpg" alt=""></li>
+		<li><img src="../images/2.jpg" alt=""></li>
+		<li><img src="../images/3.jpg" alt=""></li>
+		<li class="clear"></li>
+	</ul>
+	<script type="text/javascript" src="../javascripts/jquery-1.11.1.js"></script>
+	<script>
+		$(".pic li").mouseenter(function(){
+			$("body").append('<img src="" alt="" id="bigpic">')
+			var src=$(this).find("img").attr("src");
+			$("#bigpic").attr("src",src);
+		})
+		$(".pic li").mouseleave(function(){
+			$("#bigpic").remove();
+		})
+		$(".pic li").mousemove(function(event){
+			var x=event.pageX;
+			var y=event.pageY;
+			$("#bigpic").css({
+				"position":"absolute",
+				"top":y+20,
+				"left":x+20
+			})
+		})
+	</script>
+</body>
+</html>
